@@ -9,25 +9,23 @@ of terminal windows (at least!) opening everywhere.
 
 # How ?
 
-It depends.
-
-## Ubuntu 15.04 - Unity
-
 - Clone this repo somewhere
-- Create a file in `~/.local/share/applications/ssh-handler.sh` with the
+- Create a file in `~/.local/share/applications/ssh-handler.desktop` with the
 following content (update the `Exec` line with your specifics) :
 
 ```
 [Desktop Entry]
 Type=Application
 Name=SSH Handler
-Exec=/home/adrien/.local/bin/tmux-ssh-handler.sh %u
+Exec=/home/you/.local/bin/tmux-ssh-handler.sh %u
 Icon=utilities-terminal
 StartupNotify=false
 MimeType=x-scheme-handler/ssh
 ```
 
-- Ask your environment to use this config file to handle ssh links
+- Copy file `tmux-ssh-handler.sh` to `~/.local/bin/tmux-ssh-handler.sh` (create `~/.local/bin` if needed)
+
+- Ask your environment to use this config file to handle ssh links :
 
 ```
 $ xdg-mime default ssh-handler.desktop x-scheme-handler/ssh
@@ -35,6 +33,4 @@ $ xdg-mime default ssh-handler.desktop x-scheme-handler/ssh
 
 - Celebrate.
 
-## Fedora 22 - Gnome shell
-
-todo
+Tested on Ubuntu 15.04 (Unity) and Fedora 22 (Gnome).
